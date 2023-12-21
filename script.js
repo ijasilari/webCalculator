@@ -5,6 +5,7 @@ const screenTxt = document.querySelector('.screenTxt');
 let displayVal = '';
 let operatorCount = 0;
 let dotPressed = false;
+let operatorPressed = false;
 
 function add(x, y) {
     return Math.round(((x + y) + Number.EPSILON) * 100) / 100;
@@ -33,24 +34,29 @@ function operate(_firstNum, _secondNum, _operator) {
 }
 
 function saveOperator(_operator){
-    operatorCount++;
+    if(operatorPressed === false){
+        operatorCount++;
+    }
     if(operatorCount > 1){
         equal(false);
         firstNum = Number(displayVal);
     }else{
-        firstNum = Number(displayVal);
+        firstNum = Number(screenTxt.textContent);
     }
     displayVal = '';
     dotPressed = false;
+    operatorPressed = true;
     operator = _operator;
 }
 
 function renderScreen(num){
-    if(num === '.' && dotPressed === true){
+    //checks if number has already a dot in it 
+    if(num === '.' && screenTxt.textContent.includes('.')){
     }else if(displayVal.length < 11){
             displayVal += num;
             screenTxt.textContent = displayVal; 
             if(num === '.') dotPressed = true;
+            operatorPressed = false;
     }
 }
 

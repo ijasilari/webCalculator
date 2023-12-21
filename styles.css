@@ -1,13 +1,21 @@
 body {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     font-family: 'Roboto', sans-serif;
+}
+
+.calcContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 .calculator {
@@ -97,4 +105,18 @@ body {
 }
 .clear:active{
     background-color: rgb(234, 185, 185);
+}
+
+/*FOOTER LINKS */
+footer a{
+    color:black;
+    font-weight: bold;
+
+    position: relative;
+    top: 0;
+    transition: top 0.5s
+}
+footer a:hover{
+    top: -4px;
+    color:rgb(68, 69, 62);
 }
