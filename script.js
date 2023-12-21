@@ -17,7 +17,11 @@ function multiply(x, y) {
   return Math.round(((x * y) + Number.EPSILON) * 100) / 100;
 };
 function divide(x, y) {
-    return Math.round(((x / y) + Number.EPSILON) * 100) / 100;
+    if(y === 0){
+        return 'Huh?';
+    }else{
+        return Math.round(((x / y) + Number.EPSILON) * 100) / 100;
+    }
 }
 
 function operate(_firstNum, _secondNum, _operator) {
@@ -34,6 +38,8 @@ function operate(_firstNum, _secondNum, _operator) {
 }
 
 function saveOperator(_operator){
+    if(screenTxt.textContent === 'Huh?') clearScreen()
+
     if(operatorPressed === false){
         operatorCount++;
     }
@@ -50,6 +56,7 @@ function saveOperator(_operator){
 }
 
 function renderScreen(num){
+    if(screenTxt.textContent === 'Huh?') clearScreen()
     //checks if number has already a dot in it 
     if(num === '.' && screenTxt.textContent.includes('.')){
     }else if(displayVal.length < 11){
@@ -61,6 +68,8 @@ function renderScreen(num){
 }
 
 function equal(pressed){
+    if(screenTxt.textContent === 'Huh?') clearScreen()
+
     if(displayVal !== '' && operator !== ''){
         secondNum = Number(displayVal);
         displayVal = '';
@@ -77,5 +86,5 @@ function clearScreen(){
     operator = '';
     operatorCount = 0;
     dotPressed = false;
-    renderScreen('')
+    screenTxt.textContent = '';
 }
