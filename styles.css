@@ -7,6 +7,7 @@ body {
     height: 100vh;
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: 'Roboto', sans-serif;
 }
 
 .calculator {
@@ -50,12 +51,50 @@ body {
     height: 40px;
     margin: 2px;
     border-radius: 20px;
-    border-style: none;
+    border-style: solid;
+    border-width: 3px;
     background-color: rgb(230, 228, 228);
 }
-.btn:hover{
+
+/*NUMBER BUTTON*/
+.number{
+    border-color: rgb(207, 222, 251);
+}
+.number:hover{
     background-color: rgb(207, 222, 251);
 }
-.btn:active{
+.number:active{
     background-color: rgb(194, 206, 229);
+}
+
+/*OPERATE BUTTONS*/
+.operator{
+    border-color: rgb(232, 217, 195);
+}
+.operator:hover{
+    background-color: rgb(231, 220, 205);
+}
+.operator:active{
+    background-color: rgb(227, 214, 193);
+}
+
+/*EQUAL BUTTON*/
+.equal{
+    border-color: rgb(211, 223, 210);
+}
+.equal:hover{
+    background-color: rgb(211, 223, 210);
+}
+.equal:active{
+    background-color: rgb(188, 210, 188);
+}
+/*CLEAR BUTTON*/
+.clear{
+    border-color: rgb(245, 207, 207);
+}
+.clear:hover{
+    background-color: rgb(245, 207, 207);
+}
+.clear:active{
+    background-color: rgb(234, 185, 185);
 }

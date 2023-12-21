@@ -1,20 +1,22 @@
-let firstNum;
-let secondNum;
+let firstNum = '';
+let secondNum = '';
 let operator;
 const screenTxt = document.querySelector('.screenTxt');
 let displayVal = '';
+let operatorCount = 0;
+let dotPressed = false;
 
 function add(x, y) {
-    return x + y;
+    return Math.round(((x + y) + Number.EPSILON) * 100) / 100;
 };
 function subtract(x, y) {
-    return x - y;
+    return Math.round(((x - y) + Number.EPSILON) * 100) / 100;
 };
 function multiply(x, y) {
-  return x * y;
+  return Math.round(((x * y) + Number.EPSILON) * 100) / 100;
 };
 function divide(x, y) {
-    return x / y;
+    return Math.round(((x / y) + Number.EPSILON) * 100) / 100;
 }
 
 function operate(_firstNum, _secondNum, _operator) {
@@ -31,18 +33,43 @@ function operate(_firstNum, _secondNum, _operator) {
 }
 
 function saveOperator(_operator){
-    operator = _operator;
-    firstNum = Number(displayVal);
+    operatorCount++;
+    if(operatorCount > 1){
+        equal(false);
+        firstNum = Number(displayVal);
+    }else{
+        firstNum = Number(displayVal);
+    }
     displayVal = '';
+    dotPressed = false;
+    operator = _operator;
 }
 
 function renderScreen(num){
-    displayVal += num;
-    screenTxt.textContent = displayVal;
+    if(num === '.' && dotPressed === true){
+    }else if(displayVal.length < 11){
+            displayVal += num;
+            screenTxt.textContent = displayVal; 
+            if(num === '.') dotPressed = true;
+    }
 }
 
-function equal(){
-    secondNum = Number(displayVal);
+function equal(pressed){
+    if(displayVal !== '' && operator !== ''){
+        secondNum = Number(displayVal);
+        displayVal = '';
+        renderScreen(operate(firstNum, secondNum, operator));
+        operator = '';
+        pressed ? operatorCount = 0 : operatorCount = 1;
+    }
+}
+    
+
+function clearScreen(){
     displayVal = '';
-    renderScreen(operate(firstNum, secondNum, operator));
+    firstNum = '';
+    operator = '';
+    operatorCount = 0;
+    dotPressed = false;
+    renderScreen('')
 }

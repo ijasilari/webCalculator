@@ -8,36 +8,37 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <h1>Calculator</h1>
     <div class="calculator">
         <div class="firstRow">
             <div class="screen">
                 <p class="screenTxt"></p>
             </div>
-            <button class="btn clear">AC</button>
+            <button class="btn clear" onclick="clearScreen()">AC</button>
         </div>
         <div class="rows">
-            <button class="btn number" onClick="renderScreen('7')">7</button>
-            <button class="btn number" onClick="renderScreen('8')">8</button>
-            <button class="btn number" onClick="renderScreen('9')">9</button>
-            <button class="btn operator" onClick="saveOperator('/')">/</button>
+            <button class="btn number" onclick="renderScreen('7')">7</button>
+            <button class="btn number" onclick="renderScreen('8')">8</button>
+            <button class="btn number" onclick="renderScreen('9')">9</button>
+            <button class="btn operator" onclick="saveOperator('/')">/</button>
         </div>
         <div class="rows">
-            <button class="btn number" onClick="renderScreen('4')">4</button>
-            <button class="btn number" onClick="renderScreen('5')">5</button>
-            <button class="btn number" onClick="renderScreen('6')">6</button>
-            <button class="btn operator" onClick="saveOperator('*')">x</button>
+            <button class="btn number" onclick="renderScreen('4')">4</button>
+            <button class="btn number" onclick="renderScreen('5')">5</button>
+            <button class="btn number" onclick="renderScreen('6')">6</button>
+            <button class="btn operator" onclick="saveOperator('*')">x</button>
         </div>
         <div class="rows">
-            <button class="btn number" onClick="renderScreen('1')">1</button>
-            <button class="btn number" onClick="renderScreen('2')">2</button>
-            <button class="btn number" onClick="renderScreen('3')">3</button>
-            <button class="btn operator" onClick="saveOperator('-')">-</button>
+            <button class="btn number" onclick="renderScreen('1')">1</button>
+            <button class="btn number" onclick="renderScreen('2')">2</button>
+            <button class="btn number" onclick="renderScreen('3')">3</button>
+            <button class="btn operator" onclick="saveOperator('-')">-</button>
         </div>
         <div class="rows">
-            <button class="btn dot">.</button>
-            <button class="btn number" onClick="renderScreen('0')">0</button>
-            <button class="btn equal" onclick="equal()">=</button>
-            <button class="btn operator" onClick="saveOperator('+')">+</button>
+            <button class="btn number" onclick="renderScreen('.')">.</button>
+            <button class="btn number" onclick="renderScreen('0')">0</button>
+            <button class="btn equal" onclick="equal(true)">=</button>
+            <button class="btn operator" onclick="saveOperator('+')">+</button>
         </div>
     </div>
 </body>
