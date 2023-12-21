@@ -46,6 +46,9 @@ body {
     border-radius: 10px;
     border-width: 2px;
     margin: 2px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .screenTxt{
