@@ -26,25 +26,27 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: fit-content;
     height: 230px;
-    background-color:ghostwhite ;
+    background-color:#262626 ;
 }
 
 .firstRow{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 
 .screen {
+    background-color: #333333;
     box-sizing: border-box;
     padding: 1px 4px;
     width: 135px;
     height: 40px;
     display: inline-block;
     border-style: solid;
-    border-color:rgb(214, 216, 216);
+    border-color:rgb(72, 72, 72);
     border-radius: 10px;
-    border-width: 2px;
+    border-width: 1px;
     margin: 2px;
     display: flex;
     justify-content: end;
@@ -62,52 +64,39 @@ body {
     height: 40px;
     margin: 2px;
     border-radius: 20px;
-    border-style: solid;
-    border-width: 3px;
-    background-color: rgb(230, 228, 228);
+    border-style: none;
+    background-color: #4d4d4d;
+    color: white;
+    font-size: 20px;
 }
 
 /*NUMBER BUTTON*/
-.number{
-    border-color: rgb(207, 222, 251);
-}
 .number:hover{
-    background-color: rgb(207, 222, 251);
+    background-color: #6f6f6f;
 }
 .number:active{
-    background-color: rgb(194, 206, 229);
+    background-color: #464646;
 }
 
 /*OPERATE BUTTONS*/
 .operator{
-    border-color: rgb(232, 217, 195);
+    background-color: #fe9f1b;
 }
 .operator:hover{
-    background-color: rgb(231, 220, 205);
+    background-color: #ffbc5f;
 }
 .operator:active{
-    background-color: rgb(227, 214, 193);
-}
-
-/*EQUAL BUTTON*/
-.equal{
-    border-color: rgb(211, 223, 210);
-}
-.equal:hover{
-    background-color: rgb(211, 223, 210);
-}
-.equal:active{
-    background-color: rgb(188, 210, 188);
+    background-color: #e59320;
 }
 /*CLEAR BUTTON*/
 .clear{
-    border-color: rgb(245, 207, 207);
+    background-color: #d40000;
 }
 .clear:hover{
-    background-color: rgb(245, 207, 207);
+    background-color: #de5757;
 }
 .clear:active{
-    background-color: rgb(234, 185, 185);
+    background-color: #af0000;
 }
 
 /*FOOTER LINKS */
