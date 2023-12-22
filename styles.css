@@ -51,11 +51,13 @@ body {
     display: flex;
     justify-content: end;
     align-items: center;
+    color: white;
 }
 
 .screenTxt{
     text-align: right;
     margin: 0;
+    font-size: 20px;
 }
 
 /*BUTTON*/
