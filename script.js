@@ -59,7 +59,7 @@ function renderScreen(num){
     if(screenTxt.textContent === 'Huh?') clearScreen()
     //checks if number has already a dot in it 
     if(num === '.' && screenTxt.textContent.includes('.')){
-    }else if(displayVal.length < 11){
+    }else if(displayVal.length < 10){
             displayVal += num;
             screenTxt.textContent = displayVal; 
             if(num === '.') dotPressed = true;
